@@ -1,0 +1,354 @@
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.top-trim {
+  background-color: red;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.left-controls select {
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.right-controls {
+  display: flex;
+  align-items: center;
+}
+
+#loginButton, #openBetsButton {
+  font-size: 16px;
+  padding: 8px 16px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+#loginButton:hover, #openBetsButton:hover {
+  background-color: #444;
+}
+
+#loggedInUserDisplay {
+  cursor: pointer;
+  margin-left: 12px;
+  font-weight: bold;
+  color: white;
+  user-select: none;
+}
+
+main {
+  padding: 20px;
+}
+
+#sportsContent {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#betsListSection {
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  background: #222;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+#betsList {
+  list-style: none;
+  padding-left: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 0;
+}
+
+#betsList li {
+  padding: 8px;
+  border-bottom: 1px solid #444;
+}
+
+/* Side panel styles */
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: #222;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.7);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  color: white;
+  z-index: 100;
+}
+
+.side-panel.open {
+  right: 0;
+}
+
+.side-panel .close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.side-panel h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: red;
+}
+
+.side-panel form {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-panel label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.side-panel input {
+  padding: 8px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  background: #444;
+  color: white;
+}
+
+.side-panel input:focus {
+  outline: none;
+  border: 2px solid red;
+}
+
+.side-panel button[type="submit"] {
+  padding: 10px;
+  background: red;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+.side-panel button[type="submit"]:hover {
+  background: #bb0000;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#placeBetForm {
+  margin-top: 20px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #111;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: left;
+  color: white;
+  border: 1px solid red;
+}
+
+#placeBetForm label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 600;
+}
+
+#placeBetForm input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  background: #444;
+  color: white;
+  box-sizing: border-box;
+}
+
+#placeBetForm input:focus {
+  outline: none;
+  border: 2px solid red;
+}
+
+#placeBetForm button[type="submit"] {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  background: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#placeBetForm button[type="submit"]:hover {
+  background: #bb0000;
+}
+
+#bottomContact {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+  z-index: 101;
+}
+
+#bottomContact a {
+  color: white;
+  text-decoration: underline;
+}
+
+#bottomContact a:hover {
+  color: red;
+}
+
+.Events-Button {
+  font-size: 16px;
+  padding: 8px 16px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+  position: relative;
+  z-index: 50;  /* Changed from 102 to 50 */
+}
+
+.Events-Button:hover {
+  background-color: #ddd;
+  position: relative;
+  z-index: 50;
+}
+
+/* Optional slot styles */
+#slotMachine {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#slots .slot {
+  display: inline-block;
+  width: 100px;
+  height: 60px;
+  background: #333;
+  border-radius: 10px;
+  line-height: 60px;
+  user-select: none;
+  box-shadow: 0 0 6px #aa0000;
+}
+#blackjackGame {
+  background: #111;
+  border: 2px solid #cc0000;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  box-shadow: 0 0 15px #cc0000;
+  max-width: 360px;
+  margin: 30px auto 0 auto;
+}
+
+#blackjackGame h2 {
+  color: #ff4444;
+  margin-bottom: 12px;
+  text-shadow: 0 0 6px #aa0000;
+}
+
+#blackjackGame label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#blackjackBet {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  width: 100px;
+  background-color: #222;
+  color: white;
+  box-shadow: inset 0 0 5px #550000;
+}
+
+#blackjackGame button {
+  background-color: #cc0000;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 12px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+#blackjackGame button:hover:not(.hidden) {
+  background-color: #ff4444;
+}
+
+#blackjackGame #blackjackStatus {
+  margin-top: 12px;
+  font-weight: 700;
+  min-height: 24px;
+  color: #ffdddd;
+  text-shadow: 0 0 4px #aa0000;
+}
+
+#blackjackGame #playerCards,
+#blackjackGame #dealerCards {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 4px #cc0000;
+}
+
+#blackjackGame .hidden {
+  display: none !important;
+}
+
